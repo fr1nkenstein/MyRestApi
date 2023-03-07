@@ -71,4 +71,10 @@ public class StudentServiceImpl implements StudentService {
 
 	}
 
+	@Override
+	public List<Student> findStudentByNameAndSurname(String name, String surname) {
+
+		return studentRepository.findByStudentNameAndStudentSurname(name, surname);
+	}
+
 }

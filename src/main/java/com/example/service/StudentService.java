@@ -16,4 +16,6 @@ public interface StudentService {
 	String updateStudent(Student student);
 
 	List<Student> findByName(String name);
+
+	List<Student> findStudentByNameAndSurname(String name, String surname);
 }

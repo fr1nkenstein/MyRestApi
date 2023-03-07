@@ -60,4 +60,11 @@ public class StudentRestController {
 		return new ResponseEntity<List<Student>>(studentService.findByName(name), HttpStatus.OK);
 	}
 
+	@GetMapping("student/findbynameandsurname")
+	ResponseEntity<List<Student>> findByName(@RequestParam("name") String name,
+			@RequestParam("surname") String surname) {
+		return new ResponseEntity<List<Student>>(studentService.findStudentByNameAndSurname(name, surname),
+				HttpStatus.OK);
+	}
+
 }
