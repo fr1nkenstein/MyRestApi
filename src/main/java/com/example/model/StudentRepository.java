@@ -11,4 +11,6 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
 	List<Student> findByStudentNameAndStudentSurname(String name, String surnaname);
 
+	List<Student> findByStudentNameContaining(String cont);
+
 }

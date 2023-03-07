@@ -67,4 +67,9 @@ public class StudentRestController {
 				HttpStatus.OK);
 	}
 
+	@GetMapping("student/nameContaining")
+	ResponseEntity<List<Student>> findByNameContaining(@RequestParam("cont") String cont) {
+		return new ResponseEntity<List<Student>>(studentService.findByStudentNameContaining(cont), HttpStatus.OK);
+
+	}
 }

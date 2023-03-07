@@ -77,4 +77,10 @@ public class StudentServiceImpl implements StudentService {
 		return studentRepository.findByStudentNameAndStudentSurname(name, surname);
 	}
 
+	@Override
+	public List<Student> findByStudentNameContaining(String cont) {
+
+		return studentRepository.findByStudentNameContaining(cont);
+	}
+
 }
