@@ -55,4 +55,9 @@ public class StudentRestController {
 		return "saved" + studentService.saveStudent(student);
 	}
 
+	@GetMapping("student/findbyname")
+	ResponseEntity<List<Student>> findByName(@RequestParam("name") String name) {
+		return new ResponseEntity<List<Student>>(studentService.findByName(name), HttpStatus.OK);
+	}
+
 }

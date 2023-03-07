@@ -14,4 +14,6 @@ public interface StudentService {
 	String deleteStudent(long l);
 
 	String updateStudent(Student student);
+
+	List<Student> findByName(String name);
 }

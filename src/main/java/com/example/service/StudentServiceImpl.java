@@ -62,4 +62,13 @@ public class StudentServiceImpl implements StudentService {
 		return null;
 	}
 
+	@Override
+	public List<Student> findByName(String name) {
+
+		// Optional<ArrayList<Student>>s= studentRepository.findByStudentName(name);
+		System.out.println(studentRepository.findByStudentName(name));
+		return studentRepository.findByStudentName(name);
+
+	}
+
 }
