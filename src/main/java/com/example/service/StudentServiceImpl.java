@@ -49,7 +49,9 @@ public class StudentServiceImpl implements StudentService {
 		Optional<Student> student = studentRepository.findById(l);
 
 		if (student.isPresent()) {
-			return "hehehe i'm present" + student;
+			studentRepository.deleteById(l);
+			return "yes i was present";
+
 		}
 		return "he dose'nt e";
 		// throw new RuntimeException("employee does not exist");
@@ -82,5 +84,12 @@ public class StudentServiceImpl implements StudentService {
 
 		return studentRepository.findByStudentNameContaining(cont);
 	}
+
+	// @Override
+//	public List<Student> findAllStudentNameContaining(String cont) {
+//		Sort sort = new Sort(Sort.Direction.ASC, "studentId");
+//
+//		return studentRepository.findAllStudentNameContaining(cont, sort);
+//	}
 
 }

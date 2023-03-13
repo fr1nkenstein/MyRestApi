@@ -20,4 +20,6 @@ public interface StudentService {
 	List<Student> findStudentByNameAndSurname(String name, String surname);
 
 	List<Student> findByStudentNameContaining(String cont);
+
+	// List<Student> findAllStudentNameContaining(String cont);
 }

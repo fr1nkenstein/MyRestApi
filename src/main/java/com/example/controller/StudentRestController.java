@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.model.Student;
+import com.example.service.DepartmentService;
 import com.example.service.StudentService;
 
 import jakarta.validation.Valid;
@@ -23,6 +24,8 @@ public class StudentRestController {
 
 	@Autowired
 	private StudentService studentService;
+	@Autowired
+	private DepartmentService depserv;
 
 	@GetMapping("/students")
 	public List<Student> listofStudents() {
@@ -44,8 +47,11 @@ public class StudentRestController {
 	}
 
 	@PostMapping("student")
-	public String saveStudent(@Valid @RequestBody Student student) {
-		return "saved student is " + studentService.saveStudent(student);
+	public ResponseEntity<Student> saveStudent(@Valid @RequestBody Student student) {
+
+		return new ResponseEntity<Student>(studentService.saveStudent(student), HttpStatus.OK);
+
+		// return "saved student is " + studentService.saveStudent(student);
 
 	}
 
